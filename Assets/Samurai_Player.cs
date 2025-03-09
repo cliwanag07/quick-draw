@@ -18,5 +18,9 @@ public class Samurai_Player : Samurai {
         if (Input.GetKeyDown(KeyCode.Space)) {
             Attack(); // Trigger the attack action
         }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            GameInstance.Instance.ResetGame();
+        }
     }
 }

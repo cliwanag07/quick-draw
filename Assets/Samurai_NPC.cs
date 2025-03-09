@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class Samurai_NPC : Samurai {
@@ -39,5 +40,11 @@ public class Samurai_NPC : Samurai {
     private IEnumerator WaitToAttack() {
         yield return new WaitForSeconds(attackDelay);
         Attack(); // Trigger attack after delay
+    }
+
+    public override void Reset() {
+        base.Reset();
+        hasStartedAttack = false;
+        attackDelay = UnityEngine.Random.Range(0.1f, 0.3f);
     }
 }

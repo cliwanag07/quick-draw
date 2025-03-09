@@ -132,4 +132,15 @@ public class GameInstance : MonoBehaviour {
         // Logic for the Finished phase is handled externally.
         // Currently empty.
     }
+    
+    // Reset function
+    public void ResetGame() {
+        elapsedTime = 0.0f;
+        phase = Phase.Intro;
+        randomWaitTime = UnityEngine.Random.Range(2.0f, 5.0f);
+        exclamation.SetActive(false);
+
+        Samurai_NPC.Instance.Reset();
+        Samurai_Player.Instance.Reset();
+    }
 }

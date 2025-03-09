@@ -109,4 +109,12 @@ public class Samurai : MonoBehaviour {
         // Hide the cross
         cross?.SetActive(false);
     }
+    
+    // Reset samurai when game reset
+    public virtual void Reset() {
+        spriteRenderer.sprite = idleSprite;
+        cross?.SetActive(false);
+        pressedDraw = false;
+        StartCoroutine(MoveCoroutine(startPos, endPos, slideDuration));
+    }
 }
